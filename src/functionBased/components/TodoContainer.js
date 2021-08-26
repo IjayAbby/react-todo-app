@@ -5,7 +5,7 @@ import TodosList from "./TodosList"
 import { v4 as uuidv4 } from "uuid"
 
 const TodoContainer = () => {
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState(getInitialTodos())
 
   const handleChange = id => {
     setTodos(prevState =>
@@ -55,8 +55,6 @@ const TodoContainer = () => {
     const savedTodos = JSON.parse(temp)
     return savedTodos || []
   }
-
-  const [todos, setTodos] = useState(getInitialTodos())
 
   useEffect(() => {
     // storing todos items
